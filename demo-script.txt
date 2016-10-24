@@ -1,0 +1,32 @@
+demo app
+
+switch to ng2 bootstrap
+ - show app2
+ - bootstrap
+ - turn on css styles
+
+switch team detail to ng2
+ - show team service
+ - show team2 code
+ - app1
+   remove team module import
+ - app2
+   import TeamsModule
+   to shouldProcess: return url.toString().startsWith('/teams');
+ - show service upgrade code
+ - talk about route forwarding
+
+talk about routing organization
+show ng2 route code
+
+switch team detail to lazy-load
+ - switch loadChildren to static string: 'app/team2/team_list.module'
+ - remove component imports
+ - change component class to default
+ - notes:
+     systemjs by default
+     can implement custom loading
+
+further talking points
+ - team service is included at top-level
+ - need to split up dependencies into small modules

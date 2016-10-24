@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/">
+    <title>European Football</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="node_modules/angular-material-icons/angular-material-icons.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+
+    <!-- Angular 1 dependencies -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-material-icons/angular-material-icons.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+
+  <body ng-cloak>
+
+    <!-- top bar -->
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>Football teams</span>
+        </h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <section layout="row" flex style="height: 100%">
+
+      <!-- Main content area -->
+      <md-content flex layout-padding>
+
+        <!-- Route-based content -->
+        <div layout="column" layout-align="top">
+          <div class="ng-view"></div>
+        </div>
+
+        <!-- Loading indicator -->
+        <div ng-show="loading" layout="row" layout-sm="column" layout-align="center center">
+          <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+
+      </md-content>
+    </section>
+
+  </body>
+</html>

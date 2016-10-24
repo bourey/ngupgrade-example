@@ -1,0 +1,15 @@
+app/
+  common/
+    league/
+      -- name
+      -- id
+    team/
+      -- name
+      -- id
+      -- leagueId
+  league/
+    list
+    detail
+  team/
+    list
+    detail

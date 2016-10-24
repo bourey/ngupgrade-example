@@ -1,0 +1,30 @@
+md-toolbar ng-md-icon {
+    fill: white;
+}
+
+/*.ng-view {
+    border: thick dashed blue;
+    padding: 20px;
+}
+.ng-view:before {
+    content: 'ng1 (ng-view)';
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-weight: bold;
+    color: blue;
+}
+
+ng2-router-root {
+    border: thick dashed green;
+    display: block;
+    padding: 10px;
+}
+ng2-router-root:before {
+    content: 'ng2 (ng2-router-root)';
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-weight: bold;
+    color: green;
+}*/
