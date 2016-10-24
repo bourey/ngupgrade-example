@@ -1,7 +1,6 @@
 // ng1/2 hybrid
 import { LeagueServiceModule } from './common/league/league.service';
 import { leagueModule } from './league1/league.module';
-import { teamModule } from './team1/team.module';
 import { teamServiceModule } from './common/team/team.service';
 
 /**
@@ -14,7 +13,6 @@ export const footballApp = angular.module('footballApp', [
   'ngMaterial',
   'ngMdIcons',
   leagueModule.name,
-  teamModule.name,
   teamServiceModule.name,
   LeagueServiceModule.name,
 ]);

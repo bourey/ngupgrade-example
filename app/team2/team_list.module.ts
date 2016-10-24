@@ -28,4 +28,4 @@ let ROUTES = [{
   declarations: [TeamListCmp],
   providers: [TeamsResolver],
 })
-export class TeamsComponentModule { }
+export default class TeamsComponentModule { }
