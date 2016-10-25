@@ -10,8 +10,8 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "typeRoots": [
-      "../../node_modules/@types/",
-      "../../typings/globals/"
+      "node_modules/@types/",
+      "typings/globals/"
     ]
   },
 
