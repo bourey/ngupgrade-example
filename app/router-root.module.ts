@@ -1,4 +1,3 @@
-// ng1/2 hybrid
 import { downgradeComponent} from '@angular/upgrade';
 
 import { Ng2RouterRoot } from './app2.module';
