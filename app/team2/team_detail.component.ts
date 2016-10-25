@@ -4,7 +4,7 @@ import { Team } from '../common/team/team';
 
 @Component({
   selector: 'team',
-  templateUrl : 'team_detail.component.html'
+  templateUrl : 'app/team2/team_detail.component.html'
 })
 export class TeamDetailCmp implements OnInit {
   team: Team;
