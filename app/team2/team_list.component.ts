@@ -5,7 +5,7 @@ import { Team } from '../common/team/team';
 
 
 @Component({
-  templateUrl: 'app/team2/team_list.component.html'
+  templateUrl: 'team_list.component.html'
 })
 export class TeamListCmp implements OnInit {
   teams: Team[];

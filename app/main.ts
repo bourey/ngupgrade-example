@@ -7,7 +7,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Router } from '@angular/router';
 import { UpgradeModule } from '@angular/upgrade';
 
-import { AppModule, RootModule } from './app2.module';
+import { AppModule } from './app2.module';
+import { RootModule } from './root.module';
 
 
 export function bootstrap(
