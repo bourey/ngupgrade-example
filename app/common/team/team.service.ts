@@ -97,11 +97,16 @@ export class TeamService {
 export const teamServiceModule = angular.module('teamServiceModule', []);
 teamServiceModule.service('teamService', TeamService);
 
+
+export function getTeamService(i: ng.auto.IInjectorService) {
+  return i.get('teamService');
+};
+
 @NgModule({
   imports: [UpgradeModule],
   providers: [{
     provide: TeamService,
-    useFactory: (i: ng.auto.IInjectorService) => i.get('teamService'),
+    useFactory: getTeamService,
     deps: ['$injector']
   }]
 })
