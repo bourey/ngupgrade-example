@@ -7,8 +7,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Router } from '@angular/router';
 import { UpgradeModule } from '@angular/upgrade';
 
+import { footballApp } from './app.module';
 import { AppModuleNgFactory } from '../aot/app/app2.module.ngfactory';
-import { RootModule } from './root.module';
 
 
 export function bootstrap(
@@ -22,7 +22,7 @@ export function bootstrap(
   });
 }
 
-bootstrap(platformBrowserDynamic(), AppModuleNgFactory, document.body, RootModule).then((ref) => {
+bootstrap(platformBrowserDynamic(), AppModuleNgFactory, document.body, footballApp).then((ref) => {
   // this is required because of a bug in NgUpgrade
   setTimeout(() => {
     ref.injector.get(Router).initialNavigation();
