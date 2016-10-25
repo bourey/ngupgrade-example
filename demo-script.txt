@@ -1,7 +1,9 @@
 demo app
+ - based on ng2 quickstart
 
 switch to ng2 bootstrap
  - show app2
+ - root module (ng1)
  - bootstrap
  - turn on css styles
 
@@ -22,7 +24,6 @@ show ng2 route code
 switch team detail to lazy-load
  - switch loadChildren to static string: 'app/team2/team_list.module'
  - remove component imports
- - change component class to default
  - notes:
      systemjs by default
      can implement custom loading
