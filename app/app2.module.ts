@@ -3,8 +3,11 @@ import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, UrlHandlingStrategy } from '@angular/router';
 import { UpgradeModule, downgradeComponent} from '@angular/upgrade';
+import { LoadingServiceModule, LoadingService } from './loading.module';
+import { LoadingService2Module } from './loading2.module';
 
 import { footballApp } from './app.module';
+import { TeamsModule } from './team2/team.module';
 
 // a placeholder component that acts as a root component for angular 2 modules
 @Component({
@@ -33,7 +36,7 @@ RootModule.config(($routeProvider: angular.route.IRouteProvider) => {
 // This URL handling strategy is custom and application-specific.
 // Using it we can tell the Angular 2 router to handle only specific URLs.
 class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
-  shouldProcessUrl(url: any) { return false; }
+  shouldProcessUrl(url: any) { return url.toString().startsWith('/teams'); }
   extract(url: any) { return url; }
   merge(url: any, whole: any) { return url; }
 }
@@ -45,8 +48,11 @@ class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
 @NgModule({
   imports: [
     BrowserModule,
+    LoadingServiceModule,
+    LoadingService2Module,
     RouterModule.forRoot([], {useHash: true}),
     UpgradeModule,
+    TeamsModule,
   ],
   declarations: [Ng2RouterRoot],
   entryComponents: [Ng2RouterRoot],

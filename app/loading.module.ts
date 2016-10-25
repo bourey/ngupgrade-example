@@ -1,4 +1,8 @@
-export const LoadingModule = angular.module('LoadingModule', ['ngRoute']);
+import { NgModule } from '@angular/core';
+import { UpgradeModule } from '@angular/upgrade';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+
+export const loadingModule = angular.module('loadingModule', ['ngRoute']);
 
 /** @ngInject */
 export class LoadingService {
@@ -17,11 +21,21 @@ export class LoadingService {
     this.rootScope['loading'] = false;
   }
 }
-LoadingModule.service('loadingService', LoadingService);
+loadingModule.service('loadingService', LoadingService);
 
 /** @ngInject */
 function configLoading($rootScope: ng.IRootScopeService, loadingService: LoadingService) {
   $rootScope.$on('$routeChangeStart', function() { loadingService.showLoading(); });
   $rootScope.$on('$routeChangeSuccess', function() { loadingService.hideLoading(); });
 };
-LoadingModule.run(configLoading);
+loadingModule.run(configLoading);
+
+@NgModule({
+  imports: [UpgradeModule],
+  providers: [{
+    provide: LoadingService,
+    useFactory: (i: ng.auto.IInjectorService) => i.get('loadingService'),
+    deps: ['$injector']
+  }]
+})
+export class LoadingServiceModule { }

@@ -2,7 +2,7 @@ md-toolbar ng-md-icon {
     fill: white;
 }
 
-/*.ng-view {
+.ng-view {
     border: thick dashed blue;
     padding: 20px;
 }
@@ -27,4 +27,4 @@ ng2-router-root:before {
     right: 50px;
     font-weight: bold;
     color: green;
-}*/
+}

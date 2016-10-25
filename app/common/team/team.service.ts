@@ -3,7 +3,7 @@ import { UpgradeModule } from '@angular/upgrade';
 
 import { Team } from './team';
 
-let delay = 0;
+let delay = 2000;
 
 export class TeamService {
   teams: Team[] = [

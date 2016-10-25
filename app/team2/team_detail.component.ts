@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { Team } from '../common/team/team';
+import { LoadingService2 } from '../loading2.module';
 
 @Component({
   selector: 'team',
@@ -9,7 +10,7 @@ import { Team } from '../common/team/team';
 export class TeamDetailCmp implements OnInit {
   team: Team;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, l: LoadingService2) { }
 
   ngOnInit() {
     this.team = this.route.snapshot.data['team'];
