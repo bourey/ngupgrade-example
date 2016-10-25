@@ -13,6 +13,7 @@ export class LeagueService {
     new League('premier', 'Premier League', 'England'),
     new League('seriea', 'Italian Serie A', 'Italy'),
     new League('ligasagres', 'Liga Sagres', 'Portugal'),
+    new League('brasileirao', 'Brasileirao', 'Brazil'),
   ];
 
   constructor(private $timeout: ng.ITimeoutService) { }
