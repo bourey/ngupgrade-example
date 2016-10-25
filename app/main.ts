@@ -7,8 +7,8 @@ angular.bootstrap(document.body, [footballApp.name, 'ngRoute']);
 // import { Router } from '@angular/router';
 // import { UpgradeModule } from '@angular/upgrade';
 
+// import { footballApp } from './app.module';
 // import { AppModule } from './app2.module';
-// import { RootModule } from './root.module';
 
 
 // export function bootstrap(
@@ -22,7 +22,7 @@ angular.bootstrap(document.body, [footballApp.name, 'ngRoute']);
 //   });
 // }
 
-// bootstrap(platformBrowserDynamic(), AppModule, document.body, RootModule).then((ref) => {
+// bootstrap(platformBrowserDynamic(), AppModule, document.body, footballApp).then((ref) => {
 //   // this is required because of a bug in NgUpgrade
 //   setTimeout(() => {
 //     ref.injector.get(Router).initialNavigation();
