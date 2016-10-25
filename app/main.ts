@@ -1,7 +1,3 @@
-// import { footballApp } from './app.module';
-
-// angular.bootstrap(document.body, [footballApp.name, 'ngRoute']);
-
 import { PlatformRef, NgModuleFactory } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Router } from '@angular/router';
