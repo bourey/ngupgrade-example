@@ -32,7 +32,7 @@ RootModule.config(($routeProvider: angular.route.IRouteProvider) => {
 
 // This URL handling strategy is custom and application-specific.
 // Using it we can tell the Angular 2 router to handle only specific URLs.
-class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
+export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
   shouldProcessUrl(url: any) { return false; }
   extract(url: any) { return url; }
   merge(url: any, whole: any) { return url; }
