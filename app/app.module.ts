@@ -1,7 +1,7 @@
 // ng1/2 hybrid
 import { LeagueServiceModule } from './common/league/league.service';
 import { leagueModule } from './league1/league.module';
-import { routerRootModule } from './root.module';
+import { routerRootModule } from './router-root.module';
 import { teamServiceModule } from './common/team/team.service';
 
 /**
