@@ -2,6 +2,10 @@ md-toolbar ng-md-icon {
     fill: white;
 }
 
+a, a:visited {
+    color: rgb(40,53,147);
+}
+
 /*.ng-view {
     border: thick dashed blue;
     padding: 20px;
