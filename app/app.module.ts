@@ -19,11 +19,10 @@ export const footballApp = angular.module('footballApp', [
   LeagueServiceModule.name,
 ]);
 
-/** @ngInject */
 function configRoutes($routeProvider: angular.route.IRouteProvider) {
   $routeProvider.when('/', { templateUrl: '/app/welcome.html' });
 };
-footballApp.config(configRoutes);
+footballApp.config(['$routeProvider', configRoutes]);
 
 /** Component containing the ng1-router-controller ng-view */
 footballApp.component('footballApp', {

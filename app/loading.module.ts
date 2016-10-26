@@ -1,6 +1,5 @@
 export const LoadingModule = angular.module('LoadingModule', ['ngRoute']);
 
-/** @ngInject */
 export class LoadingService {
   rootScope: ng.IRootScopeService;
   constructor(private $rootScope: ng.IRootScopeService) {
@@ -19,9 +18,8 @@ export class LoadingService {
 }
 LoadingModule.service('loadingService', LoadingService);
 
-/** @ngInject */
 function configLoading($rootScope: ng.IRootScopeService, loadingService: LoadingService) {
   $rootScope.$on('$routeChangeStart', function() { loadingService.showLoading(); });
   $rootScope.$on('$routeChangeSuccess', function() { loadingService.hideLoading(); });
 };
-LoadingModule.run(configLoading);
+LoadingModule.run(['$rootScope', 'loadingService', configLoading]);
