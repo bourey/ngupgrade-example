@@ -29,4 +29,4 @@ let configRoutes = function($routeProvider: angular.route.IRouteProvider) {
     resolve: { team: ['teamService', '$route', resolveTeam] }
   });
 };
-teamModule.config(configRoutes);
+teamModule.config(['$routeProvider', configRoutes]);

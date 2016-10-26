@@ -1,3 +1,3 @@
 import { footballApp } from './app.module';
 
-angular.bootstrap(document.body, [footballApp.name, 'ngRoute']);
+angular.bootstrap(document.body, [footballApp.name, 'ngRoute'], { strictDi: true });

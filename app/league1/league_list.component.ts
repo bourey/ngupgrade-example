@@ -8,3 +8,4 @@ export function resolveLeagues(leagueService: LeagueService): Promise<League[]> 
 export class LeagueListComponent {
   constructor(public leagues: League[]) { }
 }
+LeagueListComponent.$inject = ['leagues'];
