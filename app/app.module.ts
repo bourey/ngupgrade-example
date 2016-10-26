@@ -1,5 +1,4 @@
 // ng1/2 hybrid
-import { LeagueServiceModule } from './common/league/league.service';
 import { leagueModule } from './league1/league.module';
 import { routerRootModule } from './router-root.module';
 import { teamServiceModule } from './common/team/team.service';
@@ -16,7 +15,6 @@ export const footballApp = angular.module('footballApp', [
   leagueModule.name,
   routerRootModule.name,
   teamServiceModule.name,
-  LeagueServiceModule.name,
 ]);
 
 function configRoutes($routeProvider: angular.route.IRouteProvider) {

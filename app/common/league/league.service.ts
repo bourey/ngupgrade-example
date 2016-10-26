@@ -32,5 +32,5 @@ export class LeagueService {
   }
 }
 
-export const LeagueServiceModule = angular.module('LeagueServiceModule', []);
-LeagueServiceModule.service('leagueService', LeagueService);
+export const leagueServiceModule = angular.module('leagueServiceModule', []);
+leagueServiceModule.service('leagueService', LeagueService);
