@@ -98,7 +98,7 @@ export class TeamService {
 }
 
 export const teamServiceModule = angular.module('teamServiceModule', []);
-teamServiceModule.service('teamService', TeamService);
+teamServiceModule.service('teamService', [TeamService]);
 
 
 export function getTeamService(i: ng.auto.IInjectorService) {
