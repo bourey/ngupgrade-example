@@ -16,3 +16,4 @@ export function resolveTeams(teamService: TeamService,
 export class LeagueDetailComponent {
   constructor(public league: League, public teams: Team[]) { }
 }
+LeagueDetailComponent.$inject = ['league', 'teams'];
