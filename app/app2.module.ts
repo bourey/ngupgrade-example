@@ -2,7 +2,7 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, UrlHandlingStrategy } from '@angular/router';
-import { UpgradeModule } from '@angular/upgrade';
+import { UpgradeModule } from '@angular/upgrade/static';
 
 import { TeamsModule } from './team2/team.module';
 
@@ -26,7 +26,7 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
 
 
 /**
- * Root module for angular 2 for the app. 
+ * Root module for angular 2 for the app.
  */
 @NgModule({
   imports: [
