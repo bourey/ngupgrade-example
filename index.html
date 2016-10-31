@@ -48,12 +48,12 @@
       <md-content flex layout-padding>
 
         <!-- Route-based content -->
-        <div layout="column" layout-align="top">
+        <div ng-hide="loading" layout="column" layout-align="top" class="ng-hide">
           <div class="ng-view"></div>
         </div>
 
         <!-- Loading indicator -->
-        <div ng-show="loading" layout="row" layout-sm="column" layout-align="center center">
+        <div ng-show="loading" layout="row" layout-sm="column" layout-align="center center" class="ng-show">
           <md-progress-circular md-mode="indeterminate"></md-progress-circular>
         </div>
 

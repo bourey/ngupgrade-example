@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 
 import { Team } from '../common/team/team';
+import { Load2 } from '../loading.module';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Team } from '../common/team/team';
 export class TeamListCmp implements OnInit {
   teams: Team[];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, l: Load2) { }
 
   ngOnInit() {
     this.teams = this.route.snapshot.data['teams'];

@@ -7,12 +7,10 @@ export const teamModule = angular.module('teamModule', [
   'ngRoute', teamServiceModule.name,
 ]);
 
-/** @ngInject */
 let resolveTeams = function(teamService: TeamService): Promise<Team[]> {
   return teamService.getTeams();
 };
 
-/** @ngInject */
 let resolveTeam = function(teamService: TeamService,
     $route: angular.route.IRouteService): Promise<Team> {
   return teamService.getTeam($route.current.params['team']);
@@ -23,12 +21,12 @@ let configRoutes = function($routeProvider: angular.route.IRouteProvider) {
     controller: TeamListCmp,
     controllerAs: 'ctrl',
     templateUrl: '/app/team1/team_list.component.html',
-    resolve: { teams: resolveTeams }
+    resolve: { teams: ['teamService', '$route', resolveTeams] }
   }).when('/teams/:team', {
     controller: TeamDetailCmp,
     controllerAs: 'ctrl',
     templateUrl: '/app/team1/team_detail.component.html',
-    resolve: { team: resolveTeam }
+    resolve: { team: ['teamService', '$route', resolveTeam] }
   });
 };
-teamModule.config(configRoutes);
+teamModule.config(['$routeProvider', configRoutes]);

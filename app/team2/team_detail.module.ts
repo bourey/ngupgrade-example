@@ -7,7 +7,7 @@ import { TeamService } from '../common/team/team.service';
 import { TeamDetailCmp } from './team_detail.component';
 
 @Injectable()
-class TeamResolver implements Resolve<Team> {
+export class TeamResolver implements Resolve<Team> {
   constructor(private teamService: TeamService) {}
 
   resolve(route: ActivatedRouteSnapshot): Promise<Team> {
@@ -15,7 +15,7 @@ class TeamResolver implements Resolve<Team> {
   }
 }
 
-let ROUTES = [{
+export const ROUTES = [{
   path : '', component: TeamDetailCmp, resolve: {
     team: TeamResolver,
   }

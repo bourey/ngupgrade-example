@@ -2,6 +2,6 @@
 
 <ul>
     <li *ngFor="let team of teams">
-        <a href="#/teams/{{team.id}}">{{team.name}}</a>
+        <a [routerLink]="['/teams', team.id]">{{team.name}}</a>
     </li>
 </ul>

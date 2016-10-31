@@ -68,6 +68,9 @@ export class TeamService {
     new Team('53', 'Fiorentina', 'seriea'),
     new Team('54', 'Cagliari', 'seriea'),
     new Team('55', 'Sampdoria', 'seriea'),
+
+    new Team('56', 'Atletico-MG', 'brasileirao'),
+    new Team('57', 'Marias', 'brasileirao'),
   ];
 
   constructor(private $timeout: ng.ITimeoutService) { }
@@ -95,13 +98,18 @@ export class TeamService {
 }
 
 export const teamServiceModule = angular.module('teamServiceModule', []);
-teamServiceModule.service('teamService', TeamService);
+teamServiceModule.service('teamService', [TeamService]);
+
+
+export function getTeamService(i: ng.auto.IInjectorService) {
+  return i.get('teamService');
+};
 
 @NgModule({
   imports: [UpgradeModule],
   providers: [{
     provide: TeamService,
-    useFactory: (i: ng.auto.IInjectorService) => i.get('teamService'),
+    useFactory: getTeamService,
     deps: ['$injector']
   }]
 })
