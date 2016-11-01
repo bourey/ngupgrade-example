@@ -1,7 +1,7 @@
 import { PlatformRef, Type } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Router } from '@angular/router';
-import { UpgradeModule } from '@angular/upgrade';
+import { UpgradeModule } from '@angular/upgrade/static';
 
 import { footballApp } from './app.module';
 import { AppModule } from './app2.module';
