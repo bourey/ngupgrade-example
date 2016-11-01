@@ -5,12 +5,15 @@ import { TeamServiceModule } from '../common/team/team.service';
 import { TeamComponentModule } from './team_detail.module';
 import { TeamsComponentModule } from './team_list.module';
 
+import { TeamComponentModuleNgFactory } from '../../aot/app/team2/team_detail.module.ngfactory';
+import { TeamsComponentModuleNgFactory } from '../../aot/app/team2/team_list.module.ngfactory';
+
 export function loadTeamList() {
-  return TeamsComponentModule as any;
+  return TeamsComponentModuleNgFactory as any;
 }
 
 export function loadTeamDetail() {
-  return TeamComponentModule as any;
+  return TeamComponentModuleNgFactory as any;
 }
 
 export const ROUTES = [
