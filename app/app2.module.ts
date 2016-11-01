@@ -24,7 +24,7 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
 
 
 /**
- * Root module for angular 2 for the app. 
+ * Root module for angular 2 for the app.
  */
 @NgModule({
   imports: [
