@@ -1,4 +1,4 @@
-import { downgradeComponent} from '@angular/upgrade';
+import { downgradeComponent} from '@angular/upgrade/static';
 
 import { Ng2RouterRoot } from './app2.module';
 
