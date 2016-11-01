@@ -2,7 +2,7 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, UrlHandlingStrategy } from '@angular/router';
-import { UpgradeModule } from '@angular/upgrade';
+import { UpgradeModule } from '@angular/upgrade/static';
 
 // a placeholder component that acts as a root component for angular 2 modules
 @Component({

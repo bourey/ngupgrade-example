@@ -30,7 +30,7 @@
     "@angular/platform-browser": "github:angular/platform-browser-builds",
     "@angular/platform-browser-dynamic": "github:angular/platform-browser-dynamic-builds",
     "@angular/router": "github:angular/router-builds",
-    "@angular/upgrade": "github:angular/upgrade-builds/bundles/upgrade-static.umd.js",
+    "@angular/upgrade": "github:angular/upgrade-builds",
     "angular": "^1.5.8",
     "angular-animate": "^1.5.8",
     "angular-aria": "^1.5.8",
