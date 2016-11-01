@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { UpgradeModule } from '@angular/upgrade';
+import { UpgradeModule } from '@angular/upgrade/static';
 
 import { Team } from './team';
 
