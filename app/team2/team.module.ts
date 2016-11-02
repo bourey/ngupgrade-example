@@ -6,11 +6,11 @@ import { TeamComponentModule } from './team_detail.module';
 import { TeamsComponentModule } from './team_list.module';
 
 export function loadTeamList() {
-  return TeamsComponentModule;
+  return TeamsComponentModule as any;
 }
 
 export function loadTeamDetail() {
-  return TeamComponentModule;
+  return TeamComponentModule as any;
 }
 
 export const ROUTES = [
