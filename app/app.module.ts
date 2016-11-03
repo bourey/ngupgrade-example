@@ -22,6 +22,11 @@ function configRoutes($routeProvider: angular.route.IRouteProvider) {
 };
 footballApp.config(['$routeProvider', configRoutes]);
 
+function enableHtml5Nav($locationProvider: angular.ILocationProvider) {
+  $locationProvider.html5Mode(true);
+};
+footballApp.config(['$locationProvider', enableHtml5Nav]);
+
 /** Component containing the ng1-router-controller ng-view */
 footballApp.component('footballApp', {
   template : '<div class="ng-view"></div>',

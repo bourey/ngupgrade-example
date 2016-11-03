@@ -21,6 +21,8 @@ export function bootstrap(
 bootstrap(platformBrowserDynamic(), AppModule, document.body, footballApp).then((ref) => {
   // this is required because of a bug in NgUpgrade
   setTimeout(() => {
+    console.log('Beginning initial navigation');
     ref.injector.get(Router).initialNavigation();
+    console.log('Initial navigation complete');
   }, 0);
 });

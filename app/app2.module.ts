@@ -1,7 +1,7 @@
 // ng1/2 hybrid
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, UrlHandlingStrategy } from '@angular/router';
+import { Router, RouterModule, UrlHandlingStrategy } from '@angular/router';
 import { UpgradeModule } from '@angular/upgrade/static';
 
 import { TeamsModule } from './team2/team.module';
@@ -19,7 +19,7 @@ export class Ng2RouterRoot {}
  * Angular 2 router to handle only a subset of our application.
  */
 export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
-  shouldProcessUrl(url: any) { return url.toString().startsWith('/teams'); }
+  shouldProcessUrl(url: any) { console.log('url', url.toString()); return url.toString().startsWith('/teams'); }
   extract(url: any) { return url; }
   merge(url: any, whole: any) { return url; }
 }
@@ -31,7 +31,7 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], {useHash: true}),
+    RouterModule.forRoot([]), //, {useHash: true}),
     TeamsModule,
     UpgradeModule,
   ],
@@ -42,5 +42,12 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
   ]
 })
 export class AppModule {
+  constructor(r: Router) {
+    console.log('App module intialized');
+    r.events.subscribe(e => {
+      console.log(e);
+    });
+  }
+
   ngDoBootstrap() {}
 }
