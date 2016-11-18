@@ -1,6 +1,6 @@
 // ng1/2 hybrid
 import { leagueModule } from './league1/league.module';
-import { routerRootModule } from './router-root.module';
+// import { routerRootModule } from './router-root.module';
 import { teamServiceModule } from './common/team/team.service';
 
 /**
@@ -13,7 +13,7 @@ export const footballApp = angular.module('footballApp', [
   'ngMaterial',
   'ngMdIcons',
   leagueModule.name,
-  routerRootModule.name,
+  // routerRootModule.name,
   teamServiceModule.name,
 ]);
 
@@ -22,8 +22,18 @@ function configRoutes($routeProvider: angular.route.IRouteProvider) {
 };
 footballApp.config(['$routeProvider', configRoutes]);
 
+function logEvent(event: ng.IAngularEvent, newRoute: any): any {
+  console.log(event, newRoute);
+};
+
+function log($rootScope: angular.IScope) {
+  $rootScope.$on('$routeChangeStart', logEvent);
+  $rootScope.$on('$routeChangeSuccess', logEvent);
+};
+footballApp.run(log);
+
 /** Component containing the ng1-router-controller ng-view */
 footballApp.component('footballApp', {
-  template : '<div class="ng-view"></div>',
+  template : '<ng2-router-root></ng2-router-root>',
   controllerAs : 'ctrl'
 });

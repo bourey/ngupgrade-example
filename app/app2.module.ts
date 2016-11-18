@@ -9,7 +9,7 @@ import { TeamsModule } from './team2/team.module';
 // a placeholder component that acts as a root component for angular 2 modules
 @Component({
   selector : 'ng2-router-root',
-  template: `<router-outlet></router-outlet>`
+  template: `<div><div class="ng-view"></div><router-outlet></router-outlet></div>`
 })
 export class Ng2RouterRoot {}
 
@@ -31,12 +31,12 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], {useHash: true}),
+    RouterModule.forRoot([], {initialNavigation: false, useHash: true}),
     TeamsModule,
     UpgradeModule,
   ],
   declarations: [Ng2RouterRoot],
-  entryComponents: [Ng2RouterRoot],
+  bootstrap: [Ng2RouterRoot],
   providers: [
     { provide: UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy },
   ]
