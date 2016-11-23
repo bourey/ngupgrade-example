@@ -1,6 +1,6 @@
 // ng1/2 hybrid
 import { leagueModule } from './league1/league.module';
-// import { routerRootModule } from './router-root.module';
+import { routerRootModule } from './router-root.module';
 import { teamServiceModule } from './common/team/team.service';
 
 /**
@@ -13,7 +13,7 @@ export const footballApp = angular.module('footballApp', [
   'ngMaterial',
   'ngMdIcons',
   leagueModule.name,
-  // routerRootModule.name,
+  routerRootModule.name,
   teamServiceModule.name,
 ]);
 
@@ -32,8 +32,16 @@ function log($rootScope: angular.IScope) {
 };
 footballApp.run(log);
 
-/** Component containing the ng1-router-controller ng-view */
-footballApp.component('footballApp', {
-  template : '<ng2-router-root></ng2-router-root>',
-  controllerAs : 'ctrl'
+footballApp.component('contentContainer', {
+  templateUrl: '/app/content-container.html',
+  transclude: true,
+});
+
+footballApp.component('mainPanel', {
+  templateUrl: '/app/main-panel.html',
+});
+
+footballApp.component('viewport', {
+  templateUrl: '/app/viewport.html',
+  transclude: true,
 });
