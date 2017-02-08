@@ -29,7 +29,7 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], {useHash: true}),
+    RouterModule.forRoot([]),
     UpgradeModule,
   ],
   declarations: [Ng2RouterRoot],
