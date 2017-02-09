@@ -1,4 +1,5 @@
 .idea
+aot
 typings/**
 node_modules
 jspm_packages
