@@ -1,26 +1,23 @@
-import { PlatformRef, Type } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Router } from '@angular/router';
 import { UpgradeModule } from '@angular/upgrade/static';
 
-import { footballApp } from './app.module';
 import { AppModule } from './app2.module';
+import { ROOT_OUTLET_LOADED } from './router-root.component';
+import { footballApp } from './app.module';
 
-
-export function bootstrap(
-    platform: PlatformRef, Ng2Module: Type<{}>, element: Element, ng1Module: angular.IModule) {
-  // We bootstrap the Angular 2 module first; then when it is ready (async)
-  // We bootstrap the Angular 1 module on the bootstrap element
-  return platform.bootstrapModule(Ng2Module).then(ref => {
+platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
     let upgrade = ref.injector.get(UpgradeModule) as UpgradeModule;
-    upgrade.bootstrap(element, [ng1Module.name]);
-    return upgrade;
-  });
-}
+    upgrade.bootstrap(document.body, [footballApp.name]);
 
-bootstrap(platformBrowserDynamic(), AppModule, document.body, footballApp).then((ref) => {
-  // this is required because of a bug in NgUpgrade
-  setTimeout(() => {
-    ref.injector.get(Router).initialNavigation();
-  }, 0);
+    // Once the root outlet is available in the DOM, kick off the ng2
+    // router. This promise will only be resolved once, which ensures that
+    // we don't call initalNavigation multiple times.
+    ref.injector.get(ROOT_OUTLET_LOADED).done.then(() => {
+      const router = ref.injector.get(Router);
+      // Kick off ng2 routing.
+      console.debug('Intializaing ng2 router');
+      router.initialNavigation();
+    });
+    return upgrade;
 });

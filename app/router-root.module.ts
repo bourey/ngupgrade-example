@@ -1,6 +1,6 @@
 import { downgradeComponent} from '@angular/upgrade/static';
 
-import { Ng2RouterRoot } from './app2.module';
+import { Ng2RouterRoot } from './router-root.component';
 
 /** Wrapper root module for angular 1 */
 export const routerRootModule = angular.module('routerRootModule', ['ngRoute']);
