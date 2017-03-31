@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NavigationError, Router, RouterModule, UrlHandlingStrategy } from '@angular/router';
 import { UpgradeModule } from '@angular/upgrade/static';
 
-import { Ng2RouterRoot, ROOT_OUTLET_LOADED, routerOutletLoaded } from './router-root.component';
 import { TeamsModule } from './team2/team.module';
 
 
@@ -30,15 +29,12 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     TeamsModule,
     UpgradeModule,
   ],
-  declarations: [Ng2RouterRoot],
-  entryComponents: [Ng2RouterRoot],
   providers: [
-    { provide: ROOT_OUTLET_LOADED, useFactory: routerOutletLoaded },
     { provide: UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy },
   ]
 })
 export class AppModule {
-  constructor(router: Router) {
+  constructor(public upgrade: UpgradeModule, private router: Router) {
     // Log routing events
     router.events.subscribe(e => {
       if (e instanceof NavigationError) {
