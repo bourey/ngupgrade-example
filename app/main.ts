@@ -1,5 +1,6 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Router } from '@angular/router';
+import { setUpLocationSync } from '@angular/router/upgrade';
 import { UpgradeModule } from '@angular/upgrade/static';
 
 import { AppModule } from './app2.module';
@@ -18,6 +19,7 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
       // Kick off ng2 routing.
       console.debug('Intializaing ng2 router');
       router.initialNavigation();
+      setUpLocationSync(upgrade);
     });
     return upgrade;
 });

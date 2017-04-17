@@ -29,6 +29,6 @@ footballApp.config(['$locationProvider', configLocation]);
 
 /** Component containing the ng1-router-controller ng-view */
 footballApp.component('footballApp', {
-  template : '<div class="ng-view"></div>',
+  template : '<div class="ng-view"></div><ng2-router-root></ng2-router-root>',
   controllerAs : 'ctrl'
 });
